@@ -1,1 +1,12 @@
-
+server:
+  port: 3333
+spring:
+  datasource:
+    url: SHOULD_BE_REPLACED
+    username: SHOULD_BE_REPLACED
+    password: SHOULD_BE_REPLACED
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    locations: classpath:db/migration/common
