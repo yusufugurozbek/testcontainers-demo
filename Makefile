@@ -28,3 +28,6 @@ mvn-run-with-postgresql:
 
 mvn-run-with-h2:
 	mvn spring-boot:run -Dspring-boot.run.profiles=dev-h2 -Pdev-h2
+
+mvn-test:
+	mvn clean test
