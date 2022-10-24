@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testcontainersDemoDb
+    username: postgres
+    password: root
+  flyway:
+    locations: classpath:db/migration/common,classpath:db/migration/dev
+
+logging.level:
+  org.hibernate.SQL: DEBUG
+  org.hibernate.type.descriptor.sql: TRACE
