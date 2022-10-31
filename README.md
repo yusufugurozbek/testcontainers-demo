@@ -14,3 +14,5 @@ Testcontainers"** talk.
 #### Local links
 
 - List all accounts: http://localhost:3333/account
+- Get age: http://localhost:3333/account/{accountId}/age
+- Get total amount of all accounts: http://localhost:3333/account/total-amount
