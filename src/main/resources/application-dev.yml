@@ -1,8 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/testcontainersDemoDb
-    username: postgres
-    password: root
+    url: jdbc:tc:postgresql:15:///testcontainersDemoDb
+    driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
   flyway:
     locations: classpath:db/migration/common,classpath:db/migration/dev
 
