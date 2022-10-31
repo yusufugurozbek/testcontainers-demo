@@ -39,4 +39,37 @@ class AccountRepositoryTest {
         assertEquals("Count is incorrect", 1, accounts.size());
     }
 
+    @Test
+    void findAccountsByAgeOlderThan_returnsCorrectCount() {
+        // given
+        addTestAccounts();
+
+        // when
+        var accountsOlderThan = accountRepository.findAccountsByAgeOlderThan(40);
+
+        // then
+        assertEquals("Size is incorrect", 2, accountsOlderThan.size());
+    }
+
+    @Test
+    void getTotalAmount_returnsCorrectAmount() {
+        // given
+        addTestAccounts();
+
+        // when
+        var totalAmount = accountRepository.getTotalAmount();
+
+        // then
+        assertEquals("Total amount is incorrect", new BigDecimal(1110000), totalAmount);
+    }
+
+    private void addTestAccounts() {
+        var accounts = List.of(
+                new Account("Yusuf Ugur", "ÖZBEK", new BigDecimal(1000000), LocalDate.now().minusYears(35)),
+                new Account("Yusuf", "ÖZBEK", new BigDecimal(100000), LocalDate.now().minusYears(45)),
+                new Account("Ugur", "ÖZBEK", new BigDecimal(10000), LocalDate.now().minusYears(55))
+        );
+        accountRepository.saveAll(accounts);
+    }
+
 }
