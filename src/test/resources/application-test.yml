@@ -1,4 +1,7 @@
 spring:
+  datasource:
+    url: jdbc:tc:postgresql:15:///testcontainersDemoDb
+    driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
   flyway:
     locations: classpath:db/migration/common
 
