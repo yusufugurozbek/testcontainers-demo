@@ -3,6 +3,7 @@ package com.github.yusufugurozbek.testcontainersdemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -18,6 +19,16 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public List<Account> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<Account> findAllByAgeOlderThan(int age) {
+        return repository.findAccountsByAgeOlderThan(age);
+    }
+
+    @Override
+    public BigDecimal getTotalAmount() {
+        return repository.getTotalAmount();
     }
 
 }
