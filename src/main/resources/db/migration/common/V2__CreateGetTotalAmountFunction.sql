@@ -1,13 +1,6 @@
-CREATE FUNCTION get_total_amount()
-    RETURNS NUMERIC AS
-$total_amount$
-DECLARE
-    total_amount NUMERIC;
+CREATE PROCEDURE get_total_amount(OUT total_amount NUMERIC)
+AS $$
 BEGIN
-    SELECT SUM(balance)
-    INTO total_amount
-    FROM account;
-    RETURN total_amount;
+    SELECT SUM(balance) INTO total_amount FROM account;
 END;
-$total_amount$
-    LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql;

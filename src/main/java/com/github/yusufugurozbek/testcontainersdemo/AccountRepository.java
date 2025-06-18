@@ -11,7 +11,7 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     @Query(value = "SELECT extract(year from age(birthdate)) FROM account WHERE  id = :accountId", nativeQuery = true)
     int getAgeById(long accountId);
 
-    @Procedure(value = "get_total_amount")
+    @Procedure(procedureName = "get_total_amount")
     BigDecimal getTotalAmount();
 
 }
